@@ -1,8 +1,15 @@
-const textarea=document.getElementById("textarea")
-function saveToLocalStorage(){
-    localStorage.setItem("savedtext",textarea.value)
+const textarea = document.getElementById("textarea");
+
+function saveToLocalStorage() {
+    localStorage.setItem("savedtext", textarea.value);
 }
-if(localStorage.setItem("savedtext")){
-    textarea.value=localStorage.getItem("savedtext");
+
+// Load text from local storage when the page loads
+if (localStorage.getItem("savedtext")) {
+    textarea.value = localStorage.getItem("savedtext");
 }
-addEventListener("input",saveToLocalStorage);
+
+textarea.addEventListener("input", saveToLocalStorage);
+
+
+console.log(localStorage.getItem("savedtext"));
